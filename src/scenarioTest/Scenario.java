@@ -1,9 +1,35 @@
 package scenarioTest;
 
 import personnages.Gaulois;
-import villagegaulois.Etal;
+import vilagegauloisold.Etal;
 
 public class Scenario {
+
+	public static class DepenseMarchand {
+		private Gaulois marchand;
+		private int qteVendue;
+		private double prixPaye;
+		private double sommeDepensee;
+		private String produit;
+
+		public DepenseMarchand(Gaulois marchand, int qteVendue, String produit, double prixPaye, double sommeDepensee) {
+			this.marchand = marchand;
+			this.qteVendue = qteVendue;
+			this.prixPaye = prixPaye;
+			this.sommeDepensee = sommeDepensee;
+			this.produit = produit;
+
+			if (qteVendue > 1) {
+				this.produit += "s";
+			}
+		}
+
+		public String toString() {
+			return "Achat de " + qteVendue + " " + produit + " sur l'étal du marchand " + marchand.getNom()
+					+ " pour un total de " + sommeDepensee + " sous.\n";
+		}
+
+	}
 
 	public static void main(String[] args) {
 
@@ -11,9 +37,9 @@ public class Scenario {
 
 		// fin
 
-		Gaulois ordralfabetix = new Gaulois("OrdralfabÃ©tix", 9);
-		Gaulois obelix = new Gaulois("ObÃ©lix", 20);
-		Gaulois asterix = new Gaulois("AstÃ©rix", 6);
+		Gaulois ordralfabetix = new Gaulois("Ordralfabétix", 9);
+		Gaulois obelix = new Gaulois("Obélix", 20);
+		Gaulois asterix = new Gaulois("Astérix", 6);
 
 		Etal<Sanglier> etalSanglierObelix = new Etal<>();
 		Etal<Sanglier> etalSanglierAsterix = new Etal<>();
