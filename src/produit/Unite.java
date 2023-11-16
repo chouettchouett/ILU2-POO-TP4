@@ -12,6 +12,6 @@ public enum Unite {
 	public String getUnite() {
 		return unite;
 	}
-
+	// faire un to string
 
 }
