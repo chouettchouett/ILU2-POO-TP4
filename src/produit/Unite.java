@@ -13,5 +13,9 @@ public enum Unite {
 		return unite;
 	}
 	// faire un to string
+	@Override
+    	public String toString() {
+        	return unite;
+    	}
 
 }
